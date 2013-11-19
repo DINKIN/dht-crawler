@@ -1,8 +1,8 @@
 dht-crawler
 ===========
 
-just changed two parts.
+just changed two POINTs:
 
-1, output the get peers info
+1, output the "get peers" info
 
-2, get the peers's info and get the torrents
+2, get torrent's id by "get peers" package and get the torrents
