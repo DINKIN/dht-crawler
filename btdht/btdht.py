@@ -153,10 +153,14 @@ class DHTRequestHandler(SocketServer.BaseRequestHandler):
             node.found_node(found_nodes, socket=self.server.socket, trans_id = trans_id, sender_id=self.server.dht.node._id, lock=self.server.send_lock)
         elif query_type == "get_peers":
             logger.debug("handle query get_peers")
+            logger.error(args)
+            logger.error("get_peer_info_hash_crawler:" + args['info_hash'].encode("hex"))
             node.pong(socket=self.server.socket, trans_id = trans_id, sender_id=self.server.dht.node._id, lock=self.server.send_lock)
             return
         elif query_type == "announce_peer":
             logger.debug("handle query announce_peer")
+            logger.error(args)
+            logger.error("announce_peer_info_hash_crawler:" + args['info_hash'].encode("hex"))
             node.pong(socket=self.server.socket, trans_id = trans_id, sender_id=self.server.dht.node._id, lock=self.server.send_lock)
             return
         else:
